@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Banyeres U.E. ""A"" VS L'Olleria C.F. "A""
+title: "Banyeres U.E. A VS L'Olleria C.F. A"
 ---
 
 ## Banyeres U.E. ""A"" VS L'Olleria C.F. "A"
