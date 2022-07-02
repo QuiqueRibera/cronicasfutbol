@@ -1,15 +1,15 @@
 --- 
 layout: post 
-title: "Jornada 16 Esides Caramanchel C.E. A VS C.E. Sant Roc d'Alcoi A"
+title: "Jornada 16: Esides Caramanchel C.E. A VS C.E. Sant Roc d'Alcoi A"
 ---
 
 ## Esides Caramanchel C.E. A VS C.E. Sant Roc d'Alcoi A
 
-El Camps Del Serpis Nº 2 F-11  albergó el partido correspondiente a la jornada 16 entre Esides Caramanchel C.E. A y C.E. Sant Roc d'Alcoi A. El entrenador local , Ricardo Lopez Pla , alineó a Mario Ferri Sanchis, Marc Esplugues Pastor, Gorka Torras Garcia, Pablo Esparza Marti, Ioan Viorel Andrei, Anderson Damian Toapanta Abad, Jordi Ferri Rebenaque, Antonio Muriana Reig, Ferran Morera Casanova, Daniel Lopez Lluch, Nicolas Revert Terol  mientras que el cuerpo técnico encabezado por G decidió salir con Carles Cloquell Ivañez, Alejandro Perez Monblanch, Denis Roldan Boti, Marcos Iborra Lopez, Marc Llorens Mompo , Victor Aracil Beltran , Arnau Cloquell Ivañez  , Jonas Doumari Piatak , Adam Doumari, Hugo Palasi Martinez   , Elies Sanchis Adrian. 
+El partido de la jornada 16 ha enfrentado a Esides Caramanchel C.E. A contra el C.E. Sant Roc d'Alcoi A en el mítico campo Camps Del Serpis Nº 2 F-11 . Mario Ferri Sanchis, Marc Esplugues Pastor, Gorka Torras Garcia, Pablo Esparza Marti, Ioan Viorel Andrei, Anderson Damian Toapanta Abad, Jordi Ferri Rebenaque, Antonio Muriana Reig, Ferran Morera Casanova, Daniel Lopez Lluch, Nicolas Revert Terol , fueron los elegidos por el entrenador local, Ricardo Lopez Pla, para salir de inicio. Los visitantes, dirigidos por Gonzalo Moncho Dominguez, Fernando Iborra Garcia, Antonio Rafael Santos Garcia alineó a Carles Cloquell Ivañez, Alejandro Perez Monblanch, Denis Roldan Boti, Marcos Iborra Lopez, Marc Llorens Mompo , Victor Aracil Beltran , Arnau Cloquell Ivañez  , Jonas Doumari Piatak , Adam Doumari, Hugo Palasi Martinez   , Elies Sanchis Adrian. 
 
-El Esides Caramanchel C.E. "A" se impuso en los primeros 45 minutos por 1 - 4. La puntería de Nicolas Revert Terol  Marc Llorens Mompo , Victor Aracil Beltran , Jonas Doumari Piatak , Hugo Palasi Martinez     fue la culpable de que el marcador se moviera del 0-0. La primera parte fue un festival de goles. Está claro que el Esides Caramanchel C.E. "A" salió más concentrado al partido. 
+Buena primera parte del Esides Caramanchel C.E. "A" que se fue al vestuario con un 1 - 4 a su favor. El primer gol del partido lo metió Nicolas Revert Terol  en el minuto 3. La primera parte fue un festival de goles. Está claro que el Esides Caramanchel C.E. "A" salió más concentrado al partido. 
 
-Buena segunda parte del Esides Caramanchel C.E. "A" que se fue al vestuario con un 1 - 8 a su favor. La puntería de  Arnau Cloquell Ivañez  , Arnau Cloquell Ivañez  , Hugo Palasi Martinez   , Hugo Palasi Martinez     fue la culpable de que el marcador se moviera del 1 - 4 del descanso. La segunda parte fue realmente entretenida. Victoria clara del Esides Caramanchel C.E. "A" que buscará repetir el resultado en el próximo partido. Todo lo contrario del C.E. Sant Roc d'Alcoi "A" que tendrá que corregir los errores si quiere ganar la semana que viene. 
+La segunda mitad acabó con un 1 - 8 favorable a Esides Caramanchel C.E. "A". La puntería de  Arnau Cloquell Ivañez  , Arnau Cloquell Ivañez  , Hugo Palasi Martinez   , Hugo Palasi Martinez     fue la culpable de que el marcador se moviera del 1 - 4 del descanso. La segunda parte fue realmente entretenida. Victoria clara del Esides Caramanchel C.E. "A" que buscará repetir el resultado en el próximo partido. Todo lo contrario del C.E. Sant Roc d'Alcoi "A" que tendrá que corregir los errores si quiere ganar la semana que viene. 
 
 Ficha técnica: 
     
