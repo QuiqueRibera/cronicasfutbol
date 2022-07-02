@@ -11,4 +11,4 @@ La obtención de los datos se ha realizado con Python, utilizando las librerías
 
 Para la publicación de estas, se ha utilizado el tema de Jekyll "Minima" que se puede encontrar en el repositorio de Github [https://github.com/jekyll/minima](https://github.com/jekyll/minima).
 
-Para la realización del TFM se ha contado con la ayuda de Martin Nadal 
+Para la realización del TFM se ha contado con la ayuda de  [Martín Nadal](https://twitter.com/muimota) y de  [Julián Pérez](https://twitter.com/muimota)
