@@ -205,6 +205,7 @@ En esta función se añaden las funciones creadas anteriormente para que dejen d
 
 De esta forma se ejecutan cada vez que se llama a la función con cada partido
 
+## Creación de una función para parsear todos los datos
 
     def parsearPartido(partidoUrl):
     
