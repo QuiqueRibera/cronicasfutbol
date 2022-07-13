@@ -1,0 +1,469 @@
+---
+title: "TFM MPVD Enrique Ribera"
+output: revealjs::revealjs_presentation
+theme: night
+transition: convex
+highlight: pygments
+incremental: true
+center: true
+---
+
+# Crónicas de fútbol automatizadas
+
+
+En este proyecto se ha realizado un sitio web que recoge crónicas automatizadas de los partidos de fútbol de la categoría "2ª Regional Juvenil - Liga 13" organizada por la Federación de Fútbol de la Comunidad Valenciana.
+
+
+## Creación de los textos y obtención de los datos
+
+
+La creación de los textos y la obtención de los datos se ha realizado con Python, y se han utilizado las librerías:
+
+
+- BeautifulSoup 
+- Operator 
+- Random 
+- String 
+- Tqdm
+
+## Publicación
+
+Se ha utilizado el tema de Jekyll “Minima”, que se puede encontrar en el repositorio de Github <https://github.com/jekyll/minima>.
+
+
+## Preparación del TFM 
+
+Para la realización del TFM se ha contado con la ayuda de Martín Nadal y de Julián Pérez. 
+
+Sin olvidar lo aprendido durante los módulos realizados con todos los profesores del claustro del máster.
+
+# Creación de los textos
+
+## Obtención de los datos
+
+Para obtener los datos, primero se ha estudiado la web en la que están subidos los datos de los partidos y se ha detectado que todos los datos se pueden extraer a través de las dos columnas que cuentan con tres filas: Jugadores titulares, suplentes y entrenadores. 
+
+## Columnas web 
+
+![](https://raw.githubusercontent.com/QuiqueRibera/cronicasfutbol/main/Imagenes_presentacion/columnas_web.png){width='600px'}
+
+## Columnas web 
+
+    localSelector = 'div.col-lg-4:nth-child(1)'
+    visSelector   = 'div.col-lg-4:nth-child(3)'
+
+    (local_titulares,local_suplentes,local_tecnicos) = \
+        [jugadores.select('li') \
+            for jugadores in soup.select_one(localSelector).select('ul')]
+
+    (visitante_titulares,visitante_suplentes,visitante_tecnicos) = \
+        [jugadores.select('li') \
+            for jugadores in soup.select_one(visSelector).select('ul')]
+
+
+
+
+## Parseo de los jugadores y entrenadores
+
+
+
+ def parseJugador(jugadorElem):
+        
+        etiquetas = [etiqueta.text.strip() for etiqueta in jugadorElem.select('span.span_etiqueta_alin')] 
+        dorsal    = jugadorElem.select_one('span').text.strip()
+        minutos   = [event.text for event in jugadorElem.select('span.minutos')]
+        eventos   = [event['src'] for event in jugadorElem.select('div>img')]
+
+        jugadorText = jugadorElem.text.strip()
+        #quitamos los minutos directamente de la cadena
+        for minuto in minutos:
+            jugadorText = jugadorText.replace(minuto,'')
+
+        #Para quedarnos con el texto 'padre' tenemos que quitar el texto de los hijos    
+        jugadorElems = jugadorText.split(' ')
+        for elem in etiquetas + [dorsal] :
+            jugadorElems.remove(elem)
+        nombre = ' '.join(jugadorElems).strip()
+
+        entradas = [int(minutos[idx][:-1]) for idx in  [i for i,v in enumerate(eventos) if  v.endswith('sustitucion_entrada_icono.png')]]
+        salidas  = [int(minutos[idx][:-1]) for idx in  [i for i,v in enumerate(eventos) if v.endswith('sustitucion_salida_icono.png')]]
+        goles    = [int(minutos[idx][:-1]) for idx in  [i for i,v in enumerate(eventos) if v.endswith('balon_icono.png')]]
+
+        return {'nombre':nombre,'dorsal':int(dorsal),'etiquetas':etiquetas,'entradas':entradas,'salidas':salidas,'goles':goles}
+
+
+
+
+## Parseo de los jugadores y entrenadores
+
+
+
+    def parseEntrenador(entrenadorElem):
+        etiquetas_entrenador = [etiqueta.text for etiqueta in entrenadorElem.select('span.span_etiqueta_alin')]
+        entrenadorElem = entrenadorElem.text.split(' ')
+
+        nombre = ' '.join(entrenadorElem)
+        for etiqueta in etiquetas_entrenador:
+            nombre = nombre.replace(etiqueta,'')
+        return {'nombre': nombre.strip()}
+
+
+## Creación de variables para manejar los datos
+
+Una vez obtenidos los datos de los jugadores, entrenadores y las acciones del partido cremos variables para obtener los detalles del partido con los que vamos a crear los textos.
+
+## Creación de variables para manejar los datos
+
+    equipo_local = soup.select_one('div.equipo:nth-child(1) > a:nth-child(2) > span:nth-child(1)').text.replace('d&#39;','')
+
+    titulares_local = [parseJugador(titular) for titular in local_titulares]
+    suplentes_local = [parseJugador(titular) for titular in local_suplentes]
+    jugadores_local = titulares_local + suplentes_local
+    tecnico_local = [parseEntrenador(tecnico) for tecnico in local_tecnicos]
+
+## Creación de variables para manejar los datos
+
+Calculamos los goles que ha metido el equipo local en todo el partido
+
+    goles = 0 
+    for jugadorElem in local_titulares + local_suplentes: 
+        jugador = parseJugador(jugadorElem) 
+        goles += len(jugador['goles']) 
+    goles_local_total = goles  
+    
+## Creación de variables para manejar los datos
+
+Calculamos los goleadores de ambos equipos
+
+    goleadores = [] 
+    for jugadorElem in local_titulares + local_suplentes + visitante_titulares + visitante_suplentes: 
+        jugador = parseJugador(jugadorElem)
+        if len(jugador['goles']) > 0:
+            goleadores.append(jugador)
+            
+## Creación de un diccionario con las variables creadas
+
+La  forma elegida de incluir las variables en el texto posterior es creando un diccionario con todas las variables creadas.
+
+    return {'jornada':soup.select_one('button.btn:nth-child(2)').text.split(' ')[17].rjust(2, '0'),
+     'fecha': fechaFormateada,
+     'estadio':soup.select_one('.nombre_campo').text.replace('|',''), 
+     'equipo_local':soup.select_one('div.equipo:nth-child(1) > a:nth-child(2) > span:nth-child(1)').text.replace('"','').replace('d&#39;',''), 
+     'equipo_visitante':soup.select_one('div.equipo:nth-child(3) > a:nth-child(2) > span:nth-child(1)').text.replace('"','').replace('d&#39;',''),
+     'resultado':  str(goles_local_total) + " - " + str(goles_visitante_total),
+     'resultado_primera':str(goles_primera_local) + " - " + str(goles_primera_visitante),
+     'resultado_segunda': str(goles_segunda_local) + " - " + str(goles_segunda_visitante),
+     'equipo_ganador': max({equipo_local: int(goles_local_total), equipo_visitante: int(goles_visitante_total)}),
+     'equipo_perdedor':min({equipo_local: int(goles_local_total), equipo_visitante: int(goles_visitante_total)}),
+     'equipo_ganador_primera': max({equipo_local: int(goles_primera_local), equipo_visitante: int(goles_primera_visitante)}),
+     'equipo_perdedor_primera': min({equipo_local: int(goles_primera_local), equipo_visitante: int(goles_primera_visitante)}),
+     'equipo_ganador_segunda': max({equipo_local: int(goles_segunda_local), equipo_visitante: int(goles_segunda_visitante)}),
+     'equipo_perdedor_segunda': min({equipo_local: int(goles_segunda_local), equipo_visitante: int(goles_segunda_visitante)}),
+     'tecnico_local':', '.join([tecnico['nombre'].strip().title() for tecnico in tecnico_local]),
+     'titulares_local':', '.join([jugador['nombre'].title() for jugador in titulares_local]),
+     'suplentes_local':', '.join([jugador['nombre'].title() for jugador in suplentes_local]),
+     'jugadores_local':titulares_local + suplentes_local ,
+     'tecnico_visitante':', '.join([tecnico['nombre'].strip().title() for tecnico in tecnicos_visitante ]),
+     'titulares_visitante':', '.join([jugador['nombre'].title() for jugador in titulares_visitante]),
+     'suplentes_visitante':', '.join([jugador['nombre'].title() for jugador in suplentes_visitante]),
+     'jugadores_visitante':titulares_visitante + suplentes_visitante,
+     'goles_total': goles_visitante_total + goles_local_total,
+     'goles_local_total': goles_local_total,
+     'goles_primera_local': goles_primera_local,
+     'goles_segunda_local' : goles_segunda_local,
+     'goles_visitante_total': goles_visitante_total,
+     'goles_primera_visitante': goles_primera_visitante,
+     'goles_segunda_visitante': goles_segunda_visitante,
+     'goleadores': ', '.join([jugador['nombre'].title() for jugador in goleadores]),
+     'goles_ganador_primera': max({goles_primera_local, goles_primera_visitante}),
+     'goles_perdedor_primera': min({goles_primera_local, goles_primera_visitante}),
+     'goles_ganador_segunda': max({goles_segunda_local, goles_segunda_visitante}),
+     'goles_perdedor_segunda': min({goles_segunda_local, goles_segunda_visitante}),
+     'goleadores_primera': goleadores_local_primera + goleadores_visitante_primera,
+     'goleadores_local': ', '.join([jugador['nombre'].title() for jugador in goleadores_local]),
+     'goleadores_local_primera': ', '.join([jugador['nombre'].title() for jugador in goleadores_local_primera]),
+     'goleadores_local_segunda': ', '.join([jugador['nombre'].title() for jugador in goleadores_local_segunda]),
+     'goleadores_visitante': ', ' .join([jugador['nombre'].title() for jugador in goleadores_visitante]),
+     'goleadores_visitante_primera': ', '.join([jugador['nombre'].title() for jugador in goleadores_visitante_primera]),
+     'goleadores_visitante_segunda': ', '.join([jugador['nombre'].title() for jugador in goleadores_visitante_segunda]),
+     'primer_goleador' : (goleadores_local_primera + goleadores_visitante_primera)[0]['nombre'].title(),
+     'primer_gol_minuto': str((goleadores_local_primera + goleadores_visitante_primera)[0]['goles']).replace("[", "").replace("]", "") , 
+     'primer_goleador_segunda' : (goleadores_local_segunda + goleadores_visitante_segunda)[0]['nombre'].title(),
+     'primer_gol_minuto_segunda': str((goleadores_local_segunda + goleadores_visitante_segunda)[0]['goles']).replace("[", "").replace("]", "")[0:2] ,       
+     'entran': ', ' .join([jugador['nombre'].title() for jugador in entran]),
+     'salen': ', ' .join([jugador['nombre'].title() for jugador in salen]),
+     'entran_local': ', ' .join([jugador['nombre'].title() for jugador in entran_local]),
+     'entran_visitante': ', ' .join([jugador['nombre'].title() for jugador in entran_visitante]),
+     'salen_local': ', ' .join([jugador['nombre'].title() for jugador in salen_local]),
+     'salen_visitante': ', ' .join([jugador['nombre'].title() for jugador in salen_visitante]),
+     
+    }
+
+## Creación de una función para parsear todos los datos
+
+En esta función se añaden las funciones creadas anteriormente para que dejen de ser funciones globales y sean locales.
+
+De esta forma se ejecutan cada vez que se llama a la función con cada partido
+
+
+    def parsearPartido(partidoUrl):
+    
+      headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko)                  Chrome/39.0.2171.95 Safari/537.36'}
+      r = requests.get(partidoUrl,headers=headers)
+      soup = BeautifulSoup(r.text,'html.parser')
+    
+      localSelector = 'div.col-lg-4:nth-child(1)'
+      visSelector   = 'div.col-lg-4:nth-child(3)'
+
+      (local_titulares,local_suplentes,local_tecnicos) = \
+          [jugadores.select('li') \
+            for jugadores in soup.select_one(localSelector).select('ul')]
+
+      (visitante_titulares,visitante_suplentes,visitante_tecnicos) = \
+          [jugadores.select('li') \
+            for jugadores in soup.select_one(visSelector).select('ul')]
+      ...
+      
+
+## Creación de los textos
+
+Los textos se dividen en 5 partes:
+
+
+- Cabecera para el tema de Github
+- Entradilla
+- Primera parte
+- Segunda parte
+- Ficha técnica
+
+Dentro de cada parte (excepto cabecera y ficha técnica) se utiliza random para elegir frases de manera aleatoria.
+
+## Cabecera para el tema de Github
+
+El tema utilizado requiere que el principio del texto defina el tipo de página y el título.
+
+
+    layout = [ '--- \n\
+      layout: post \n\
+      title: "Jornada {jornada}: {equipo_local} VS {equipo_visitante}"\n\
+      ---']
+    def head(partido):
+      cronica = random.choice(layout).format(**partido)
+      return cronica
+      
+## Entradilla
+
+La entradilla se divide entre los datos del partido (número de jornada, estadio y equipos) y las alineaciones.
+
+    def cronicaEntradilla(partido):
+      presentacion_entradilla = \
+      [
+      " El partido de la jornada {jornada} ha enfrentado a {equipo_local} contra el {equipo_visitante} en el mítico campo            {estadio}. ",
+      "El {estadio} albergó el partido correspondiente a la jornada {jornada} entre {equipo_local} y {equipo_visitante}. ",
+      "El {equipo_visitante} visitó el {estadio}  ,estadio del {equipo_local}, para enfrentarse en la jornada {jornada}. ",
+      "El {equipo_local} y el {equipo_visitante} jugaron el partido de la jornada {jornada} en el {estadio}. ",
+      "El {equipo_ganador} sumó tres puntos a su casillero tras ganar en la jornada {jornada} por {resultado} contra el                {equipo_perdedor} en {estadio}. ",
+      "El {equipo_local} jugó en su mítico estadio, el {estadio}, el partido de la jornada {jornada} contra el                         {equipo_visitante}. "
+        ]
+      alineaciones_entradilla = \
+        [
+      "El equipo local salió con {titulares_local} a decisión de su cuerpo técnico {tecnico_local}. Por su parte, los                 entrenadores del equipo local, dirigido por {tecnico_visitante} salió al campo con {titulares_visitante}. ",
+      "El entrenador local , {tecnico_local} , alineó a {titulares_local} mientras que el cuerpo técnico encabezado por               {tecnico_visitante[0]} decidió salir con {titulares_visitante}. ",
+      "{titulares_local}, fueron los elegidos por el entrenador local, {tecnico_local}, para salir de inicio. Los visitantes,         dirigidos por {tecnico_visitante} alineó a {titulares_visitante}. ",
+      "Por parte de los locales, el cuerpo técnico de {equipo_local} , formado por {tecnico_local} alineó a: {titulares_local}        mientras que los visitantes saltaron al campo con {titulares_visitante} a decisión de {tecnico_visitante}. ",
+      "En esta ocasión el equipo entrenado por {tecnico_local} jugó de inicio con {titulares_local}, mientras que por parte del       equipo visitante salieron {titulares_visitante} a decisión de {tecnico_visitante}. "
+      ]
+    
+      cronica = random.choice(presentacion_entradilla).format(**partido) + \
+      random.choice(alineaciones_entradilla).format(**partido)
+      return cronica
+      
+## Primera parte
+
+En la primera parte dividimos el texto en el resultado y los goles. 
+
+En este bloque y en el de Segunda parte se tiene en cuenta si hay goles y si es empate o gana uno de los dos equipos.
+
+## Primera parte
+
+    def cronicaPrimeraParte(partido):
+    
+      resultado_primera_emp_goles = [ \
+      "El primer tiempo acabó con un empate a {goles_primera_local}. ", 
+      "El marcador mostraba un empate a {goles_primera_local} al finalizar los primeros 45 minutos reglamentarios. ",
+      "La igualdad reinó durante los primeros 45 minutos y ambos equipos se fueron a vestuarios habiendo marcado                     {goles_primera_local} goles.  ",
+      "Los dos equipos tuvieron oportunidad de irse a vestuarios dominando el marcador, pero al acabar la primera parte el            marcador mostraba un empate a {goles_primera_local}. ",
+      "La primera parte fue muy disputada y ninguno de los dos equipos se fue dominando y el marcado mostraba el                     {resultado_primera}.  "                         
+                                ]
+
+      goles_primera_emp_goles = [\
+      "Los goles llegaron de la mano de {goleadores_local_primera} para los locales y de {'goleadores_visitante_primera'} para       el {equipo_visitante}. ",
+      "{goleadores_local_primera} por parte de {equipo_local} mientras que los visitante aprovecharon la puntería de                 {goleadores_visitante_primera}. ",
+      "El partido empezó con el gol de {primer_goleador} en el minuto {primer_gol_minuto} pero no supieron mantener la ventaja. ",
+      "Ningún entrenador se fue satisfecho al vestuario ya que ninguno de los dos equipos supo imponer su ley pese a los goles        locales de {goleadores_local_primera}  y {goleadores_visitante_primera} por parte del {equipo_visitante}. " ,                 
+      "El primer gol de {primer_goleador} al minuto {primer_gol_minuto} no fue suficiente para poner a su equipo por delante al       descanso. ",
+                           
+                                ]
+
+      resultado_primera_emp_nogoles = [\
+      "Primera parte aburrida sin goles en el marcador. ",
+      "Los aficionados no vivieron el partido más interesante del campeonato y el 0-0 reinaba en el marcador al final de los         primeros 45 minutos. ",
+      "Sosa primera parte en la que ningún equipo pudo celebrar ningún gol. ",
+      "Durante el primer tiempo del partido ninguno de los jugadores consiguió marcar gol, por lo que durante los 45 primeros        minutos el marcador no se movió del 0-0 inicial. ",
+      "En la primera parte ninguno de los equipos estuvo acertado de cara al gol, por lo que los primeros 45 minutos                 concluyeron con el mismo resultado de 0-0. "                            
+                                ]     
+
+
+    resultado_noemp_goles = [\
+     
+     "El {equipo_ganador_primera} se impuso en los primeros 45 minutos por {resultado_primera}. " ,
+     "El {equipo_ganador_primera} se fue con los deberes hechos al descanso con un {resultado_primera} a su favor. ",
+     "A final de los primeros 45 minutos reglamentarios el marcador mostraba {resultado_primera} a favor del {equipo_ganador_primera}. ",
+     "La primera mitad acabó con un {resultado_primera} favorable a {equipo_ganador_primera}. " ,
+     "Buena primera parte del {equipo_ganador_primera} que se fue al vestuario con un {resultado_primera} a su favor. "     
+                                ]
+
+    goles_noemp_goles = [\
+     "La puntería de {goleadores_local_primera} {goleadores_visitante_primera}  fue la culpable de que el marcador se moviera del 0-0. ",
+     "El partido empezó bien para {primer_goleador} que fue el encargado de abrir el marcador en el minuto {primer_gol_minuto}. ", 
+     "El primer gol del partido lo metió {primer_goleador} en el minuto {primer_gol_minuto}. "
+                                ] 
+    
+    parte1_emp_goles = [
+        random.choice(resultado_primera_emp_goles) + \
+        random.choice(goles_primera_emp_goles)
+    ]
+    parte1_emp_nogoles= [
+         random.choice(resultado_primera_emp_nogoles)
+    ]
+    parte1_noemp_goles =[
+       random.choice(resultado_noemp_goles)+ \
+       random.choice(goles_noemp_goles)
+    ]
+    #identificar la situación del partido
+    empate = partido['goles_primera_local'] == partido['goles_primera_visitante']
+    hay_goles = partido['goles_primera_local'] + partido['goles_primera_visitante'] > 0
+    hay_muchos_goles = partido['goles_primera_local'] + partido['goles_primera_visitante'] > 3
+    hay_un_claro_ganador = abs(partido['goles_primera_local'] - partido['goles_primera_visitante']) > 2 
+    
+    
+    cronica = ""
+    plantilla_cronica = None
+    if empate and hay_goles:
+        plantilla_cronica = parte1_emp_goles
+    elif empate and not hay_goles:
+        plantilla_cronica = parte1_emp_nogoles
+    elif not empate and hay_goles:
+        plantilla_cronica = parte1_noemp_goles
+    
+    cronica += random.choice(plantilla_cronica).format(**partido)
+     
+    if hay_muchos_goles:
+        cronica += "La primera parte fue un festival de goles. "
+    if hay_un_claro_ganador:
+        cronica += "Está claro que el {equipo_ganador_primera} salió más concentrado al partido. ".format(**partido)
+
+        
+    return cronica
+
+## Segunda parte
+
+La segunda parte tiene la misma estructura que la primera.
+
+## Ficha técnica
+
+La ficha técnica recoje todos los datos de los jugadores del partido.
+
+    def fichaTecnica(partido):
+
+      ficha_tecnica =[ 'Ficha técnica: \n\
+      \n\
+      {equipo_local}: Titulares: {titulares_local} \n\
+      Suplentes: {suplentes_local} \n\
+      Cuerpo técnico {tecnico_local} \n\
+      \n\
+      {equipo_visitante}: Titulares {titulares_visitante}\n\
+      Suplentes: {suplentes_visitante} \n\
+      Cuerpo técnico {tecnico_visitante} Estadio: {estadio}. Goles: {goleadores}.  ']
+    
+      cronica = random.choice(ficha_tecnica).format(**partido)
+      return cronica
+
+## Extracción de Urls
+
+Para la extracción de la url de cada partido vamos al listado de la web de la Federación.
+
+    url = 'https://resultadosffcv.isquad.es/resultados_partidos.php?id_torneo=39882&jornada=2&id_temp=2122&id_modalidad=1&id_competicion=10558'
+    headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
+    r = requests.get(url,headers=headers)
+    soup = BeautifulSoup(r.text,'html.parser')
+    jornadas = list(set([ a["href"] for a in soup.select(".capa_jornada >a ")]))
+    urlJornadas = []
+
+    for jornada in jornadas:
+      jornada = jornada.replace(jornada, 'https://resultadosffcv.isquad.es/'+jornada)
+      urlJornadas.append(jornada)
+    todoslosPartidos = []
+      for jornada in urlJornadas:
+
+    r = requests.get(jornada,headers=headers)
+    soup = BeautifulSoup(r.text,'html.parser')
+    urlpartidosJornada = list(set([ a["href"] for a in soup.select(".td_nombre_resultados > a")]))
+    todoslosPartidos = todoslosPartidos + urlpartidosJornada
+    
+    urlPartidos =['https://resultadosffcv.isquad.es/'+partido.replace('partido_estadisticas.php','partido.php') for partido in        todoslosPartidos]
+    
+    
+## Almacenamiento de las crónicas en archivos Markdown
+
+El tipo de archivo es Markdown por exigencia del tema de Github elegido para publicar las crónicas. Utilizamos el paquete tqdm para obtener una barra de progreso visual durante la ejecución de la celda. 
+
+    for num,url in enumerate(tqdm(urlPartidos)):
+      partido = parsearPartido(url)
+      cronica = head(partido) + '\n\n' +  '## ' + partido['equipo_local'] + ' ' + partido['resultado'] + ' ' +                         partido['equipo_visitante'] + '\n\n' + cronicaEntradilla(partido) + '\n\n' + cronicaPrimeraParte(partido)  + '\n\n' +          cronicaSegundaParte(partido) + '\n\n' + fichaTecnica(partido)
+      f = open('C:/Users/usuario/cronicasfutbol/prueba/{fecha}-j{jornada}_{equipo_local}_vs_{equipo_visitante}.md'.format(**par         tido).replace('"', ""),'w',encoding="utf-8")
+      f.write(cronica)
+      f.close()
+
+# Publicación de las crónicas
+
+## Publicación de las crónicas
+
+Página de inicio
+
+![](https://raw.githubusercontent.com/QuiqueRibera/cronicasfutbol/main/Imagenes_presentacion/paginaWeb.png){width='600px'}
+
+## Publicación de las crónicas
+
+Ejemplo de crónica
+
+![](https://raw.githubusercontent.com/QuiqueRibera/cronicasfutbol/main/Imagenes_presentacion/ejemploCronica.png){width='600px'}
+
+# Conclusiones
+
+Este trabajo de final de máster me ha ayudado a entender mejor las operaciones y la sintaxis de Python. Trabajar con tantos tipos de datos diferentes, numéricos, cadenas de texto, listas, etc., ha hecho que entienda mucho mejor la estructura de los cuadernos de python. Otro aspecto importante son los tipos de funciones locales o globales que influyen mucho en el producto final.
+
+## Aspectos interiorizados
+
+- Dierentes tipos de datos y sus características
+- Variables y funciones locales y globales
+- Trabajar con for .. in y creación de funciones
+- Obtener datos de una web
+- Trabajar con cadenas de texto
+
+## Aspectos a mejorar
+
+- Limpieza y presentación del cuaderno
+- Detección y solución de errores
+- Entender que se necesita hacer en el paso siguiente
+- Tiempo y dedicación
+
+# Error en el código
+
+El código contiene un error por el cual los partidos sin goles no pueden generar crónicas. Este error viene de la variable de primer goleador de cada parte y se intentará solucionar. 
+
+Disculpen las molestias
+
+# Agradecimientos
+
+Agradecer a Adolfo Antón Bravo por hacer posible este máster y a todos los profesores del claustro que han dedicado su timepo a la difícil tarea de enseñar programación para la realización de periodismo de datos a unos principiantes con ganas, pero deshorientados.
