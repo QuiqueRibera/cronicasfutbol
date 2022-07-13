@@ -45,7 +45,7 @@ Para obtener los datos, primero se ha estudiado la web en la que están subidos 
 
 ## Columnas web 
 
-![](https://raw.githubusercontent.com/QuiqueRibera/cronicasfutbol/main/Imagenes_presentacion/columnas_web.png){width='600px'}
+![Columnas web](https://raw.githubusercontent.com/QuiqueRibera/cronicasfutbol/main/Imagenes_presentacion/columnas_web.png){width='600px'}
 
 ## Columnas web 
 
@@ -432,13 +432,13 @@ El tipo de archivo es Markdown por exigencia del tema de Github elegido para pub
 
 Página de inicio
 
-![](https://raw.githubusercontent.com/QuiqueRibera/cronicasfutbol/main/Imagenes_presentacion/paginaWeb.png){width='600px'}
+![Pagina de inicio](https://raw.githubusercontent.com/QuiqueRibera/cronicasfutbol/main/Imagenes_presentacion/paginaWeb.png){width='600px'}
 
 ## Publicación de las crónicas
 
 Ejemplo de crónica
 
-![](https://raw.githubusercontent.com/QuiqueRibera/cronicasfutbol/main/Imagenes_presentacion/ejemploCronica.png){width='600px'}
+![Ejemplo de crónica](https://raw.githubusercontent.com/QuiqueRibera/cronicasfutbol/main/Imagenes_presentacion/ejemploCronica.png){width='600px'}
 
 # Conclusiones
 
