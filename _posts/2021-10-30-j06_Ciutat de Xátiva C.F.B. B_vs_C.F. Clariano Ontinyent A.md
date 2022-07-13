@@ -3,20 +3,20 @@ layout: post
 title: "Jornada 06: Ciutat de Xátiva C.F.B. B VS C.F. Clariano Ontinyent A"
 ---
 
-## Ciutat de Xátiva C.F.B. B 1 - 8 C.F. Clariano Ontinyent A
+## Ciutat de Xátiva C.F.B. B 1 - 2 C.F. Clariano Ontinyent A
 
-El Ciutat de Xátiva C.F.B. B jugó en su mítico estadio, el Ciutat de l'Esport de Xativa F-11 Campo 1 , el partido de la jornada 06 contra el C.F. Clariano Ontinyent A. Por parte de los locales, el cuerpo técnico de Ciutat de Xátiva C.F.B. B , formado por Ricardo Lopez Pla alineó a: Mario Ferri Sanchis, Marc Esplugues Pastor, Gorka Torras Garcia, Pablo Esparza Marti, Ioan Viorel Andrei, Anderson Damian Toapanta Abad, Jordi Ferri Rebenaque, Antonio Muriana Reig, Ferran Morera Casanova, Daniel Lopez Lluch, Nicolas Revert Terol  mientras que los visitantes saltaron al campo con Carles Cloquell Ivañez, Alejandro Perez Monblanch, Denis Roldan Boti, Marcos Iborra Lopez, Marc Llorens Mompo , Victor Aracil Beltran , Arnau Cloquell Ivañez  , Jonas Doumari Piatak , Adam Doumari, Hugo Palasi Martinez   , Elies Sanchis Adrian a decisión de Gonzalo Moncho Dominguez, Fernando Iborra Garcia, Antonio Rafael Santos Garcia. 
+El partido de la jornada 06 ha enfrentado a Ciutat de Xátiva C.F.B. B contra el C.F. Clariano Ontinyent A en el mítico campo Ciutat de l'Esport de Xativa F-11 Campo 1 . Por parte de los locales, el cuerpo técnico de Ciutat de Xátiva C.F.B. B , formado por Marcos Prio Talon alineó a: Cristian Ferri Megias, Daniel Cespedes Molchanov, Georgi Yordanov Dallev, Pablo Nita, Victor Ortega Salom, Renan Navarro Grimaltos, Miguel Catala Sanvalero, Franco Pinales Turbi, Pau Gimeno Del Valle, Hugo Poveda Hervas, Mouhamed Razlaoui Traiga mientras que los visitantes saltaron al campo con Nicolas Revert Terol, Daniel Garcia Balaguer, Josep Reig Pastor, Jorge Calabuig Penades, Javier Revert Ballester, Rafael Manuel Ballester Tortosa, Hugo Sanchidrian Marquez, Sergio Tortosa Borrell, Rafael Moreno Galiana, Daniel Vidal Penades, Bryan Martinez Torro a decisión de Miquel Ubeda Tortosa. 
 
-Buena primera parte del Ciutat de Xátiva C.F.B. "B" que se fue al vestuario con un 1 - 4 a su favor. El partido empezó bien para Nicolas Revert Terol  que fue el encargado de abrir el marcador en el minuto 3. La primera parte fue un festival de goles. Está claro que el Ciutat de Xátiva C.F.B. "B" salió más concentrado al partido. 
+El Ciutat de Xátiva C.F.B. "B" se fue con los deberes hechos al descanso con un 0 - 1 a su favor. El primer gol del partido lo metió Rafael Manuel Ballester Tortosa en el minuto 22. 
 
-La segunda mitad acabó con un 1 - 8 favorable a Ciutat de Xátiva C.F.B. "B". La puntería de  Arnau Cloquell Ivañez  , Arnau Cloquell Ivañez  , Hugo Palasi Martinez   , Hugo Palasi Martinez     fue la culpable de que el marcador se moviera del 1 - 4 del descanso. La segunda parte fue realmente entretenida. Victoria clara del Ciutat de Xátiva C.F.B. "B" que buscará repetir el resultado en el próximo partido. Todo lo contrario del C.F. Clariano d&#39;Ontinyent ""A"" que tendrá que corregir los errores si quiere ganar la semana que viene. 
+La igualdad reinó durante los segundos 45 minutos y ambos equipos marcaron 1 goles.  Ningún entrenador se fue satisfecho con el trabajo de la segunda parte ya que ninguno de los dos equipos supo imponer su ley pese a los goles locales de Franco Pinales Turbi  y Sergio Tortosa Borrell por parte del C.F. Clariano Ontinyent A. 
 
 Ficha técnica: 
     
-    Ciutat de Xátiva C.F.B. B: Titulares: Mario Ferri Sanchis, Marc Esplugues Pastor, Gorka Torras Garcia, Pablo Esparza Marti, Ioan Viorel Andrei, Anderson Damian Toapanta Abad, Jordi Ferri Rebenaque, Antonio Muriana Reig, Ferran Morera Casanova, Daniel Lopez Lluch, Nicolas Revert Terol  
-    Suplentes: Oscar Soriano Tortosa, Francisco Mascuñan Llombueria, Deyan Diyanov Ivanov, Cesar Semper Rios 
-    Cuerpo técnico Ricardo Lopez Pla 
+    Ciutat de Xátiva C.F.B. B: Titulares: Cristian Ferri Megias, Daniel Cespedes Molchanov, Georgi Yordanov Dallev, Pablo Nita, Victor Ortega Salom, Renan Navarro Grimaltos, Miguel Catala Sanvalero, Franco Pinales Turbi, Pau Gimeno Del Valle, Hugo Poveda Hervas, Mouhamed Razlaoui Traiga 
+    Suplentes: Alexander Ivaylov Yordanov, Pablo Sala Peciña, Josep Isern Maiques, Octavio Soriano Grimaldos 
+    Cuerpo técnico Marcos Prio Talon 
     
-    C.F. Clariano Ontinyent A: Titulares Carles Cloquell Ivañez, Alejandro Perez Monblanch, Denis Roldan Boti, Marcos Iborra Lopez, Marc Llorens Mompo , Victor Aracil Beltran , Arnau Cloquell Ivañez  , Jonas Doumari Piatak , Adam Doumari, Hugo Palasi Martinez   , Elies Sanchis Adrian
-    Suplentes: Hector Pelaez Navarro, Jaume Pastor Peidro, Arnau Cortell Delhom 
-    Cuerpo técnico Gonzalo Moncho Dominguez, Fernando Iborra Garcia, Antonio Rafael Santos Garcia Estadio: Ciutat de l'Esport de Xativa F-11 Campo 1 . Goles: Nicolas Revert Terol , Marc Llorens Mompo , Victor Aracil Beltran , Arnau Cloquell Ivañez  , Jonas Doumari Piatak , Hugo Palasi Martinez   .  
+    C.F. Clariano Ontinyent A: Titulares Nicolas Revert Terol, Daniel Garcia Balaguer, Josep Reig Pastor, Jorge Calabuig Penades, Javier Revert Ballester, Rafael Manuel Ballester Tortosa, Hugo Sanchidrian Marquez, Sergio Tortosa Borrell, Rafael Moreno Galiana, Daniel Vidal Penades, Bryan Martinez Torro
+    Suplentes: Javier Ferre Llopis, Jordi Bernabeu Cucart, Ivan Broseta Mataix, Amin Khatib Nassif 
+    Cuerpo técnico Miquel Ubeda Tortosa Estadio: Ciutat de l'Esport de Xativa F-11 Campo 1 . Goles: Franco Pinales Turbi, Rafael Manuel Ballester Tortosa, Sergio Tortosa Borrell.  

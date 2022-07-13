@@ -3,20 +3,20 @@ layout: post
 title: "Jornada 29: Ciutat de Xátiva C.F.B. B VS L'Olleria C.F. A"
 ---
 
-## Ciutat de Xátiva C.F.B. B 1 - 8 L'Olleria C.F. A
+## Ciutat de Xátiva C.F.B. B 0 - 3 L'Olleria C.F. A
 
-El L'Olleria C.F. "A" sumó tres puntos a su casillero tras ganar en la jornada 29 por 1 - 8 contra el Ciutat de Xátiva C.F.B. "B" en Ciutat de l\'\'Esport de Xativa F-11 Campo 2 . Por parte de los locales, el cuerpo técnico de Ciutat de Xátiva C.F.B. B , formado por Ricardo Lopez Pla alineó a: Mario Ferri Sanchis, Marc Esplugues Pastor, Gorka Torras Garcia, Pablo Esparza Marti, Ioan Viorel Andrei, Anderson Damian Toapanta Abad, Jordi Ferri Rebenaque, Antonio Muriana Reig, Ferran Morera Casanova, Daniel Lopez Lluch, Nicolas Revert Terol  mientras que los visitantes saltaron al campo con Carles Cloquell Ivañez, Alejandro Perez Monblanch, Denis Roldan Boti, Marcos Iborra Lopez, Marc Llorens Mompo , Victor Aracil Beltran , Arnau Cloquell Ivañez  , Jonas Doumari Piatak , Adam Doumari, Hugo Palasi Martinez   , Elies Sanchis Adrian a decisión de Gonzalo Moncho Dominguez, Fernando Iborra Garcia, Antonio Rafael Santos Garcia. 
+El Ciutat de Xátiva C.F.B. B y el L'Olleria C.F. A jugaron el partido de la jornada 29 en el Ciutat de l\'\'Esport de Xativa F-11 Campo 2 . El entrenador local , Francisco Chulia Aviles, Vicente D Ferri Blasco , alineó a Cristian Ferri Megias, Hugo Poveda Hervas, Alvaro Chapi Ferrer, Guillem Mena Andres, Pablo Nita, Ian Marto Doaz, Victor Ortega Salom, Amin Tadlaoui, Miguel Catala Sanvalero, Mouhamed Razlaoui Traiga, Joan Donat Esparza mientras que el cuerpo técnico encabezado por D decidió salir con Lucas Marti Morillo, Ferran Gasco Perez, Edwar Josue Chavez Guartazaca, Angel Salido Ortiz, Pau Juan Guerola, Alejandro Such Soler, Joan Cuquerella Camarena, Jairo Soler Herreros, Josep Segui Fuster, Alex Borreda Sanchis, Alvaro Vidal Vicent. 
 
-El L'Olleria C.F. "A" se fue con los deberes hechos al descanso con un 1 - 4 a su favor. La puntería de Nicolas Revert Terol  Marc Llorens Mompo , Victor Aracil Beltran , Jonas Doumari Piatak , Hugo Palasi Martinez     fue la culpable de que el marcador se moviera del 0-0. La primera parte fue un festival de goles. Está claro que el L'Olleria C.F. "A" salió más concentrado al partido. 
+El L'Olleria C.F. "A" se fue con los deberes hechos al descanso con un 0 - 1 a su favor. El partido empezó bien para Josep Segui Fuster que fue el encargado de abrir el marcador en el minuto 2. 
 
-Buena segunda parte del L'Olleria C.F. "A" que se fue al vestuario con un 1 - 8 a su favor. El segundo tiempo empezó bien para Arnau Cloquell Ivañez   que fue el encargado de abrir el marcador de la segunda parte en el minuto 52. La segunda parte fue realmente entretenida. Victoria clara del L'Olleria C.F. "A" que buscará repetir el resultado en el próximo partido. Todo lo contrario del Ciutat de Xátiva C.F.B. "B" que tendrá que corregir los errores si quiere ganar la semana que viene. 
+El L'Olleria C.F. "A" se impuso al final de los segundos 45 minutos por 0 - 3. El primer gol de la segunda parte lo metió Nocolas Moya Vidal en el minuto 87. 
 
 Ficha técnica: 
     
-    Ciutat de Xátiva C.F.B. B: Titulares: Mario Ferri Sanchis, Marc Esplugues Pastor, Gorka Torras Garcia, Pablo Esparza Marti, Ioan Viorel Andrei, Anderson Damian Toapanta Abad, Jordi Ferri Rebenaque, Antonio Muriana Reig, Ferran Morera Casanova, Daniel Lopez Lluch, Nicolas Revert Terol  
-    Suplentes: Oscar Soriano Tortosa, Francisco Mascuñan Llombueria, Deyan Diyanov Ivanov, Cesar Semper Rios 
-    Cuerpo técnico Ricardo Lopez Pla 
+    Ciutat de Xátiva C.F.B. B: Titulares: Cristian Ferri Megias, Hugo Poveda Hervas, Alvaro Chapi Ferrer, Guillem Mena Andres, Pablo Nita, Ian Marto Doaz, Victor Ortega Salom, Amin Tadlaoui, Miguel Catala Sanvalero, Mouhamed Razlaoui Traiga, Joan Donat Esparza 
+    Suplentes: Renan Navarro Grimaltos, Esteban Flores Minotta, Samuel Puig Contreras, Franco Pinales Turbi, Nicolas Canet Miralles 
+    Cuerpo técnico Francisco Chulia Aviles, Vicente D Ferri Blasco 
     
-    L'Olleria C.F. A: Titulares Carles Cloquell Ivañez, Alejandro Perez Monblanch, Denis Roldan Boti, Marcos Iborra Lopez, Marc Llorens Mompo , Victor Aracil Beltran , Arnau Cloquell Ivañez  , Jonas Doumari Piatak , Adam Doumari, Hugo Palasi Martinez   , Elies Sanchis Adrian
-    Suplentes: Hector Pelaez Navarro, Jaume Pastor Peidro, Arnau Cortell Delhom 
-    Cuerpo técnico Gonzalo Moncho Dominguez, Fernando Iborra Garcia, Antonio Rafael Santos Garcia Estadio: Ciutat de l\'\'Esport de Xativa F-11 Campo 2 . Goles: Nicolas Revert Terol , Marc Llorens Mompo , Victor Aracil Beltran , Arnau Cloquell Ivañez  , Jonas Doumari Piatak , Hugo Palasi Martinez   .  
+    L'Olleria C.F. A: Titulares Lucas Marti Morillo, Ferran Gasco Perez, Edwar Josue Chavez Guartazaca, Angel Salido Ortiz, Pau Juan Guerola, Alejandro Such Soler, Joan Cuquerella Camarena, Jairo Soler Herreros, Josep Segui Fuster, Alex Borreda Sanchis, Alvaro Vidal Vicent
+    Suplentes: Arnau Barbera Chafer, Nocolas Moya Vidal, David Brazales Lopez, Marcos Tormo Canos, Pablo Vidal Policarpo, Alejandro Lapeña Saez, Cristian Alfonso Olivares 
+    Cuerpo técnico David Vidal Policarpo, Miguel Samper Ureña Estadio: Ciutat de l\'\'Esport de Xativa F-11 Campo 2 . Goles: Josep Segui Fuster, Nocolas Moya Vidal, Marcos Tormo Canos.  
